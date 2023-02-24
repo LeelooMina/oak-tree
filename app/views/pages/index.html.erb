@@ -1,1 +1,8 @@
 Index page
+
+<h1>Acorns</h1>
+<ul>
+  <% @acorns.each do |acorn| %>
+    <li><%= acorn.content %></li>
+  <% end %>
+</ul>
