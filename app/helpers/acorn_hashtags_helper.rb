@@ -1,0 +1,2 @@
+module AcornHashtagsHelper
+end

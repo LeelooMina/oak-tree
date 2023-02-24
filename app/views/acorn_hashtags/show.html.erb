@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @acorn_hashtag %>
+
+<div>
+  <%= link_to "Edit this acorn hashtag", edit_acorn_hashtag_path(@acorn_hashtag) %> |
+  <%= link_to "Back to acorn hashtags", acorn_hashtags_path %>
+
+  <%= button_to "Destroy this acorn hashtag", @acorn_hashtag, method: :delete %>
+</div>

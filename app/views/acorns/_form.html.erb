@@ -1,0 +1,47 @@
+<%= form_with(model: acorn) do |form| %>
+  <% if acorn.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(acorn.errors.count, "error") %> prohibited this acorn from being saved:</h2>
+
+      <ul>
+        <% acorn.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div>
+    <%= form.label :date_created, style: "display: block" %>
+    <%= form.date_field :date_created %>
+  </div>
+
+  <div>
+    <%= form.label :img, style: "display: block" %>
+    <%= form.text_field :img %>
+  </div>
+
+  <div>
+    <%= form.label :link, style: "display: block" %>
+    <%= form.text_field :link %>
+  </div>
+
+  <div>
+    <%= form.label :reply, style: "display: block" %>
+    <%= form.check_box :reply %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

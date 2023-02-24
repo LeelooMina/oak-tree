@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Acorn hashtags</h1>
+
+<div id="acorn_hashtags">
+  <% @acorn_hashtags.each do |acorn_hashtag| %>
+    <%= render acorn_hashtag %>
+    <p>
+      <%= link_to "Show this acorn hashtag", acorn_hashtag %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New acorn hashtag", new_acorn_hashtag_path %>

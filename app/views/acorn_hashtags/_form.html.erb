@@ -1,0 +1,27 @@
+<%= form_with(model: acorn_hashtag) do |form| %>
+  <% if acorn_hashtag.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(acorn_hashtag.errors.count, "error") %> prohibited this acorn_hashtag from being saved:</h2>
+
+      <ul>
+        <% acorn_hashtag.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :acorn_id, style: "display: block" %>
+    <%= form.text_field :acorn_id %>
+  </div>
+
+  <div>
+    <%= form.label :hastag_id, style: "display: block" %>
+    <%= form.text_field :hastag_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
