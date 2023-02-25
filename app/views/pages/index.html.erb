@@ -1,29 +1,13 @@
 
 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
-
-<%
-=begin%>
- 
-
-<h1>Acorns</h1>
-<ul>
-  <% @acorns.each do |acorn| %>
-  <hr>
-    <div class="user-info">
-    <%= image_tag url_for(acorn.user.profile_img), class: 'img img-thumbnail rounded-circle profile-img', alt: "#{acorn.user.username}'s profile photo " %>
-    <h2><%= acorn.user.username %></h2>
-     <i><%= acorn.date_created.strftime("%m/%d/%Y")%></i>
-    </div>
-    <p><%= acorn.content %></p>
-  <% end %>
-</ul> 
-<%
-=end%>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container">
-    <a class="navbar-brand" href="#">Oak Tree</a>
+    <a class="navbar-brand" href="#"> <span class="material-symbols-outlined">
+nature
+</span> Oak Tree</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
