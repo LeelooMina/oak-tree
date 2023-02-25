@@ -45,7 +45,7 @@ end
 
   15.times do
     Acorn.create(
-      content:Faker::Movies::BackToTheFuture.quote,
+      content:Faker::TvShows::DrWho.quote,
       date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
       img: Faker::Placeholdit.image(size: "300x300"),
       link: Faker::Internet.url,
@@ -68,6 +68,18 @@ end
   15.times do
     Acorn.create(
       content:Faker::Movies::StarWars.quote,
+      date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
+      img: Faker::Placeholdit.image(size: "300x300"),
+      link: Faker::Internet.url,
+      reply: false,
+      user: User.all.sample
+    )
+  end
+
+  
+  15.times do
+    Acorn.create(
+      content:Faker::Movies::BackToTheFuture.quote,
       date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
       img: Faker::Placeholdit.image(size: "300x300"),
       link: Faker::Internet.url,
