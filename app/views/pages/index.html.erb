@@ -1,6 +1,6 @@
 
 
-<%= stylesheet_link_tag "index.css" %>
+
 
 
 
@@ -8,7 +8,9 @@
 <ul>
   <% @acorns.each do |acorn| %>
   <hr>
-    <%= image_tag url_for(acorn.user.profile_img), alt: "#{acorn.user.username}'s profile photo " %><h4><%= acorn.user.username %></h4>
+    <div class="user-info">
+    <%= image_tag url_for(acorn.user.profile_img), class: 'img img-thumbnail rounded-circle profile-img', alt: "#{acorn.user.username}'s profile photo " %><h2><%= acorn.user.username %></h2>
+    </div>
     <p><%= acorn.content %></p>
   <% end %>
 </ul>
