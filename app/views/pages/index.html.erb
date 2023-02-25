@@ -1,8 +1,14 @@
-Index page
+
+
+<%= stylesheet_link_tag "index.css" %>
+
+
 
 <h1>Acorns</h1>
 <ul>
   <% @acorns.each do |acorn| %>
-    <li><%= acorn.content %></li>
+  <hr>
+    <%= image_tag url_for(acorn.user.profile_img), alt: "#{acorn.user.username}'s profile photo " %><h4><%= acorn.user.username %></h4>
+    <p><%= acorn.content %></p>
   <% end %>
 </ul>
