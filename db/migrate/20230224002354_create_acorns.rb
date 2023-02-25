@@ -1,5 +1,6 @@
 class CreateAcorns < ActiveRecord::Migration[7.0]
   def change
+    unless table_exists? :acorns
     create_table :acorns do |t|
       t.string :content
       t.date :date_created
@@ -9,6 +10,7 @@ class CreateAcorns < ActiveRecord::Migration[7.0]
       t.references :user, null: false, foreign_key: true
 
       t.timestamps
+    end
     end
   end
 end
