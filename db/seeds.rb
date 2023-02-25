@@ -7,13 +7,27 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 
-Acorn.create(content: "Hey yo")
+require 'faker'
 
+# Create 10 fake users
+20.times do
+  User.create(
+    username: Faker::Internet.username,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password(min_length: 8),
+    profile_img: Faker::Avatar.image(size: "200x200"),
+    cover_img: Faker::Placeholdit.image(size: "800x400"),
+    bio: Faker::Lorem.paragraph
+  )
+end
 
-Acorn.create(content: "Hey yo")
-
-Acorn.create(content: "Hey yo")
-
-Acorn.create(content: "Hey yo")
-
-Acorn.create(content: "Hey yo")
+50.times do
+    Acorn.create(
+      content: Faker::Lorem.sentence,
+      date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
+      img: Faker::Placeholdit.image(size: "300x300"),
+      link: Faker::Internet.url,
+      reply: false,
+      user: User.all.sample
+    )
+  end
