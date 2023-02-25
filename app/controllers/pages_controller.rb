@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
     def index
-        @acorns = Acorn.order(date_created: :asc)
+        @acorns = Acorn.order(date_created: :desc)
     end    
 end

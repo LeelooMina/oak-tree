@@ -22,3 +22,33 @@
   .user-info i{
     margin-left: .4em;
   }
+
+  .wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .left-col,
+  .right-col {
+    width: 15%;
+  }
+  
+  .middle-col {
+    flex: 1;
+    margin: 0 16px;
+  }
+  
+  .left-col {
+    order: 1;
+  }
+  
+  .middle-col {
+    order: 2;
+  }
+  
+  .right-col {
+    order: 3;
+  }
+  
+  
+  
