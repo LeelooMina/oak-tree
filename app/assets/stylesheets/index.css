@@ -138,6 +138,7 @@ body{
  top: 6vh;
  backdrop-filter: blur(10px);
  border-bottom: 1px solid #e6ecf0;
+ 
   
 }
 
@@ -214,4 +215,17 @@ a:active {
 .card-header{
   background-color: white !important;
   border-bottom: 0px !important;
+}
+
+
+
+.button-style{
+  border-radius: 400px;
+  background-color:springgreen;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.wide{
+  width: 100%;
 }
