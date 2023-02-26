@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .profile-img {
     width: 80px;
     height: 80px;
@@ -25,7 +29,8 @@
 
   .wrapper {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    flex-wrap: wrap;
   }
   
   .left-col,
@@ -39,7 +44,10 @@
   }
   
   .left-col {
-    order: 1;
+    flex-basis: 250px;
+  height: 100%;
+  position: sticky;
+  top: 0;
   }
   
   .middle-col {
@@ -47,6 +55,10 @@
   }
   
   .right-col {
+    flex-basis: 250px;
+    height: 100%;
+    position: sticky;
+    top: 0;
     order: 3;
   }
   
@@ -58,3 +70,9 @@
     'GRAD' 9,
     'opsz' 48
   }
+
+  .acorn-time{
+    font-size: smaller;
+  }
+
+  
