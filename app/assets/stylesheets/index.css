@@ -11,6 +11,8 @@ body{
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(10px);
+  
 }
 
 .profile-img {
@@ -134,10 +136,11 @@ body{
 .top-new{
  position: sticky;
  top: 6vh;
- backdrop-filter: blur(5px);
+ backdrop-filter: blur(10px);
  border-bottom: 1px solid #e6ecf0;
   
 }
+
 
 .top-new ul{
   display: flex;
