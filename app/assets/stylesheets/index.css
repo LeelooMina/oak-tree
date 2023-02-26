@@ -3,76 +3,103 @@
 }
 
 .profile-img {
-    width: 80px;
-    height: 80px;
-  }
-  
-  .user-info {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-info img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    margin-right: 10px;
-  }
-  
-  .user-info h2 {
-    margin: 0;
-  }
-  
-  .user-info i{
-    margin-left: .4em;
-  }
+  width: 80px;
+  height: 80px;
+}
 
-  .wrapper {
-    display: flex;
-    /* justify-content: space-between; */
-    flex-wrap: wrap;
-  }
-  
-  .left-col,
-  .right-col {
-    width: 15%;
-  }
-  
-  .middle-col {
-    flex: 1;
-    margin: 0 16px;
-  }
-  
-  .left-col {
-    flex-basis: 250px;
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info h2 {
+  margin: 0;
+}
+
+.user-info i {
+  margin-left: 0.4em;
+}
+
+.wrapper {
+  display: flex;
+  /* justify-content: space-between; */
+  flex-wrap: wrap;
+}
+
+.left-col,
+.right-col {
+  width: 20%;
+}
+
+.middle-col {
+  flex: 1;
+  margin: 0px;
+}
+
+.left-col {
+
   height: 100%;
   position: sticky;
   top: 0;
-  }
-  
-  .middle-col {
-    order: 2;
-  }
-  
-  .right-col {
-    flex-basis: 250px;
-    height: 100%;
-    position: sticky;
-    top: 0;
-    order: 3;
-  }
-  
-  
-  .material-symbols-outlined {
-    font-variation-settings:
-    'FILL' 1,
-    'wght' 600,
-    'GRAD' 9,
-    'opsz' 48
-  }
+  border: 0;
+}
 
-  .acorn-time{
-    font-size: smaller;
-  }
+.middle-col {
+  order: 2;
+}
 
-  
+.right-col {
+
+  height: 100%;
+  position: sticky;
+  top: 0;
+  order: 3;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 9, "opsz" 48;
+}
+
+.acorn-time {
+  font-size: smaller;
+}
+
+a {
+  border-radius: 400px;
+}
+
+a:link {
+  text-decoration: none;
+  color:black;
+}
+
+a:visited {
+  text-decoration: none;
+  color:black;
+}
+
+a:hover {
+  text-decoration: none;
+  color:black !important;
+}
+
+a:active {
+  text-decoration: none;
+  color:black;
+}
+
+.list-group-item:hover {
+  background-color: lightgray;
+}
+
+.rounded-top {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}
