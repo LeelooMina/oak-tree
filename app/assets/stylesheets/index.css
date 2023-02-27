@@ -7,6 +7,12 @@ body{
 
 }
 
+.tree{
+  color: green;
+  font-size: small;
+}
+
+
 .navbar{
   position: sticky;
   top: 0;
@@ -25,7 +31,7 @@ body{
 .acorn-wrapper {
   max-width: 700px;
   background: #fff;
-  margin: 0 auto;
+  margin: 0;
   margin-top: 0px;
   border-radius:3px;
   padding: 30px;
@@ -114,7 +120,7 @@ body{
 .left-col,
 .right-col {
   width: 20%;
-  top: 5vh;
+  top: 6vh;
  
 }
 
@@ -129,16 +135,17 @@ body{
 
   height: 100%;
   position: sticky;
-  top: 6vh;
+  top: 2vh;
   border: 0;
 }
 
 .top-new{
  position: sticky;
- top: 6vh;
- backdrop-filter: blur(10px);
- border-bottom: 1px solid #e6ecf0;
- 
+ top: 0vh;
+
+ padding: 0px;
+ max-width: 700px;
+ margin: 0;
   
 }
 
@@ -155,6 +162,29 @@ body{
   cursor: pointer;
 }
 
+.search-bar{
+  width: 60%;
+  padding: 2vh;
+}
+
+.top-sticky{
+  position: sticky;
+  top: 0vh;
+  border: 0 5px black;
+  backdrop-filter: blur(10px);
+}
+
+.search-bar-container{
+ 
+
+  padding: 0px;
+  max-width: 700px;
+  margin: 0;
+  display: flex;
+  justify-content:center;
+}
+
+
 .middle-col {
   order: 2;
 }
@@ -168,7 +198,8 @@ body{
 }
 
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 9, "opsz" 48;
+  font-variation-settings: "FILL" 1, "wght" 600, "GRAD" 9, "opsz" 50;
+  font-size: 50px !important;
 }
 
 .acorn-time {
