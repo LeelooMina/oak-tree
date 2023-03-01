@@ -66,13 +66,14 @@ body{
   
   .acorn-wrapper:hover{
     background: lightgray;
-    cursor: pointer;
+    
   }
   
   .acorn-header {
     display: flex;
     align-items:flex-start;
     font-size:14px;
+    cursor: pointer;
   }
   /* .acorn-user-info {
     font-weight:bold;
