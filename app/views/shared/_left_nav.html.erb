@@ -8,7 +8,8 @@ nature
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-hashtag p-3"></i>Explore</li> </a>
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-regular fa-bell p-3"></i>Notifications</li></a>
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-message p-3"></i>Messages</li></a>
-    <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-user-secret p-3"></i>Profile</li></a>
+     <%= link_to url_for(controller: "users", action: "show", id: 1) do %><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-user-secret p-3"></i>Profile</li></a>
+     <% end %>
     <a href="#" class="rounded-lg"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-ellipsis p-3"></i>More</li></a>
     <li></li>
     <%= link_to new_acorn_path do %>

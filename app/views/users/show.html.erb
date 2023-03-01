@@ -2,9 +2,17 @@
 
 <%= render @user %>
 
+@ <%= @user.username %>
+
 <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
 
   <%= button_to "Destroy this user", @user, method: :delete %>
 </div>
+
+<% Acorn.where(user_id: @user.id).each do |acorn| %>
+
+  <%= render acorn %>
+
+  <% end %>
