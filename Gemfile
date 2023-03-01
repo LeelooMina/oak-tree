@@ -46,6 +46,7 @@ gem 'bootstrap'
 
 gem "font-awesome-sass", "~> 6.3.0"
 
+gem "open-uri"
 
 
 # Use Sass to process CSS
