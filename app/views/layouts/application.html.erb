@@ -19,10 +19,27 @@
 
     <link href="https://fonts.googleapis.com/css?family=Asap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 
   </head>
 
   <body>
-    <%= yield %>
+  <div class="wrapper">
+  <div class="main-content">
+<div class="left-col border border-0">
+  <%= render partial: "shared/left_nav" %>
+</div>
+  <div class="middle-col">
+  <%= render partial: "shared/top_new" %>
+   <%= yield %>
+</div>
+<div class="right-col border border-1">
+  <%= render partial: "shared/right_nav" %>
+</div>
+
+  </div>
+  </div>
+   
   </body>
 </html>

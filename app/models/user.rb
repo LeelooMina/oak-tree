@@ -4,7 +4,9 @@ class User < ApplicationRecord
     validates :email, presence: true
     validates :password, presence: true
 
-    validate :image_path_exists
+    
+
+    has_many :likes
 
     def image_path_exists
         require 'open-uri'

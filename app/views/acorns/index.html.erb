@@ -1,14 +1,8 @@
-<p style="color: green"><%= notice %></p>
 
-<h1>Acorns</h1>
 
-<div id="acorns">
   <% @acorns.each do |acorn| %>
-    <%= render acorn %>
-    <p>
-      <%= link_to "Show this acorn", acorn %>
-    </p>
-  <% end %>
-</div>
+   <%= link_to acorn do%>
+      <%= render acorn %>
+    <% end %>
+    <% end %>
 
-<%= link_to "New acorn", new_acorn_path %>
