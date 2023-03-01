@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_24_004059) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_01_223911) do
   create_table "acorn_hashtags", force: :cascade do |t|
     t.integer "acorn_id", null: false
     t.integer "hastag_id", null: false
@@ -32,11 +32,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_004059) do
     t.index ["user_id"], name: "index_acorns_on_user_id"
   end
 
-  create_table "followers", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "follows", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_followers_on_user_id"
+    t.index ["follower_id", "followed_id"], name: "index_follows_on_follower_id_and_followed_id", unique: true
   end
 
   create_table "hashtags", force: :cascade do |t|
@@ -78,7 +79,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_24_004059) do
   add_foreign_key "acorn_hashtags", "acorns"
   add_foreign_key "acorn_hashtags", "hastags"
   add_foreign_key "acorns", "users"
-  add_foreign_key "followers", "users"
   add_foreign_key "likes", "acorns"
   add_foreign_key "likes", "users"
   add_foreign_key "replies", "acorns"

@@ -5,4 +5,11 @@ class Acorn < ApplicationRecord
   
   has_many :likes
   has_many :replies
+  has_many :acorn_hastags
+  
+
+  has_many :acorns, :through => :replies
+
+  has_many :hastags, :through => :acorn_hastags
+
 end
