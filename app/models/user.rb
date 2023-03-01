@@ -1,12 +1,15 @@
 class User < ApplicationRecord
 
-    validates :username, presence: true
-    validates :email, presence: true
+    validates :username, :email, presence: true, uniqueness: true, length: {minimum: 3, maximum: 25}
+    validates :email, format:
+     {with: URI::MailTo::EMAIL_REGEXP}
     validates :password, presence: true
 
     
 
     has_many :likes
+    has_many :acorns
+    has_many :followers
 
     def image_path_exists
         require 'open-uri'
