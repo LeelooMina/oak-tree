@@ -1,8 +1,22 @@
-
-
-  <% @acorns.each do |acorn| %>
+<% @acorns.each do |acorn| %>
    
       <%= render acorn %>
     
     <% end %>
+
+    <% if @total_pages > 1 %>
+  <nav>
+    <ul class="pagination">
+      <% if @page > 1 %>
+        <li class="p-1"><%= link_to 'Previous', acorns_path(page: @page - 1) %></li>
+      <% end %>
+      <% 1.upto(@total_pages) do |page| %>
+        <li class="<%= 'active' if page == @page %> p-1"><%= link_to page, acorns_path(page: page) %></li>
+      <% end %>
+      <% if @page < @total_pages %>
+        <li class="p-1"><%= link_to 'Next', acorns_path(page: @page + 1) %></li>
+      <% end %>
+    </ul>
+  </nav>
+<% end %>
 

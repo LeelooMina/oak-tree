@@ -3,7 +3,11 @@ class AcornsController < ApplicationController
 
   # GET /acorns or /acorns.json
   def index
-    @acorns = Acorn.all
+    @per_page = 10
+    @page = (params[:page] || 1).to_i
+    @total_count = Acorn.count
+    @total_pages = (@total_count / @per_page.to_f).ceil
+    @acorns = Acorn.offset((@page - 1) * @per_page).limit(@per_page)
   end
 
   # GET /acorns/1 or /acorns/1.json
