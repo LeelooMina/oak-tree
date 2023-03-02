@@ -6,7 +6,7 @@
         
         <div class="acorn-user-info">
             <b>
-              @<%= acorn.user.username %>
+              @<%= link_to acorn.user.username, user_path(acorn.user) %>
             </b>
           <%= acorn.created_at.strftime("%m-%d-%Y") %>
     <p><%= acorn.content %></p>
@@ -45,6 +45,9 @@
       <% if !Like.find_by(user_id: 1, acorn_id: acorn.id)%>
       <svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
 
+    
+
+
 
       <form action="/likes" method="post">
         <input type="hidden" name="like[user_id]" value="<%= 1 %>" %>
@@ -57,9 +60,7 @@
       </div>
     </div>
     
-    <div class="message">
-      <svg class="feather feather-send sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-    </div>
+
   </div>
 
     </div>
