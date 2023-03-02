@@ -13,6 +13,7 @@ require 'faker'
 10.times do
   User.create(
     username: Faker::Internet.username,
+    
     email: Faker::Internet.email,
     password: Faker::Internet.password(min_length: 8),
     profile_img: Faker::Avatar.image(size: "200x200", set: "set4"),

@@ -34,7 +34,7 @@ body{
   margin: 0;
   margin-top: 0px;
   border-radius:3px;
-  padding: 30px;
+  padding: 0px;
   border-bottom: 1px solid #e6ecf0;
   border-top: 1px solid #e6ecf0;
   border-left: 1px solid #e6ecf0;
@@ -126,9 +126,12 @@ body{
 
 .middle-col {
   flex: 1;
-  margin: 0px;
+  margin: 0px !important;
+  padding: 0px !important;
   border-left: 1px;
   border-right: 1px;
+  max-width: 700px;
+
 }
 
 .left-col {
