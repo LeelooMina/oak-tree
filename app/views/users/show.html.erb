@@ -4,7 +4,23 @@
 
 @ <%= @user.username %>
 
-<div>
+
+      <form action="/follows" method="post">
+        <input type="hidden" name="follow[follower_id]" value="<%= 1 %>" %>
+        <input type="hidden" name="follow[followed_id]" value="<%= @user.id %> "> 
+        <input type="submit" value="Follow">
+        </form>
+
+<p> Followers:
+ </p>
+ 
+         <% @user.followers.each do |follower|%>
+          <p>@<%= follower.username %></p>
+        <% end %>
+  
+  
+  
+  <div>
   <%= link_to "Edit this user", edit_user_path(@user) %> |
   <%= link_to "Back to users", users_path %>
 
