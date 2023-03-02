@@ -9,6 +9,8 @@ gem "rails", "~> 7.0.4", ">= 7.0.4.2"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
 
+gem 'bcrypt'
+
 
 
 # Use the Puma web server [https://github.com/puma/puma]
@@ -46,6 +48,7 @@ gem 'bootstrap'
 
 gem "font-awesome-sass", "~> 6.3.0"
 
+gem "open-uri"
 
 
 # Use Sass to process CSS

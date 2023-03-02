@@ -1,0 +1,4 @@
+<% user = User.find(1) %>
+    <% user.followers.each do |followers| %>
+    <%= followers.username %>
+    <% end %>
