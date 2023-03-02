@@ -209,6 +209,12 @@ body{
     display: flex;
     justify-content:center;
   }
+
+  .display-flex-column{
+    display: flex;
+    flex-direction: column;
+    
+  }
   
   
   .middle-col {
