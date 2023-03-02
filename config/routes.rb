@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   resources :likes
   resources :acorns
   resources :follows
-  resources :users
+  resources :users, except: [:new]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
   root "acorns#index"
+  get "/sign-up", to: "users#new"
 end
