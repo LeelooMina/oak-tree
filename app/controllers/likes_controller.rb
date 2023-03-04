@@ -25,8 +25,8 @@ class LikesController < ApplicationController
 
     respond_to do |format|
       if @like.save
-        format.html { redirect_to "#{acorns_path}/#{@like[:acorn_id]}", notice: "Like was successfully created." }
-        format.json { render :show, status: :created, location: @like }
+      
+   
     
       else
         flash[:notice] = @like.errors.full_messages.to_sentence
