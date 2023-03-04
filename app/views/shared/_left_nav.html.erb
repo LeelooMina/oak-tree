@@ -3,17 +3,30 @@
 nature
 </span>Oak_Tree</li>
   <li></li>
+   <%# <% if !user_signed_in? %>
+    <%= link_to sign_up_path do %>
+     <li><button type="button" class="border-0 fs-4 extra-round button-style wide">Sign Up</button></li>
+     <% end %>
+  <%= link_to login_path do %>
+   <li><button type="button" class="border-0 fs-4 extra-round button-style wide">Login</button></li>
+   <% end %>
+
     <%= link_to root_path	do %><li class="list-group-item border-0 fs-4"><i class="fa-solid fa-house p-3 "></i>Home</li></a>
     <% end %>
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-hashtag p-3"></i>Explore</li> </a>
+
+    <%# <% if user_signed_in? %>
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-regular fa-bell p-3"></i>Notifications</li></a>
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-message p-3"></i>Messages</li></a>
      <%= link_to url_for(controller: "users", action: "show", id: 1) do %><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-user-secret p-3"></i>Profile</li></a>
      <% end %>
     <a href="#" class="rounded-lg"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-ellipsis p-3"></i>More</li></a>
     <li></li>
+
+
     <%= link_to new_acorn_path do %>
     <li><button type="button" class="border-0 fs-4 extra-round button-style wide">Acorn</button></li>
+    <%# <% end %>
     <% end %>
   </ul>
 
