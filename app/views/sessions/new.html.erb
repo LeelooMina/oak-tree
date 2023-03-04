@@ -1,0 +1,50 @@
+<style>
+
+  
+  .center-form {
+    display: flex;
+    justify-content: center;
+   
+    height: 100vh;
+  }
+  
+
+  .new-form {
+    width: 200px;
+    height: 200px;
+    border-color: black;
+    border: 5px;
+    
+  }
+
+</style>
+
+
+<div class="center-form">
+
+<div class="new-form">
+
+<h3>Login</h3>
+
+<%= form_with do |form| %>
+<div class="flash-notice" style="color: red;">
+  <%= flash[:notice] %>
+</div>
+
+<div>
+<%= form.label :email %>
+<%= form.text_field :email, style: "display: block; border-radius: 9999px"%>
+</div>
+
+<div>
+<%= form.label :password %>
+<%= form.password_field :password, style: "display: block; border-radius: 9999px" %>
+</div>
+
+<div style="margin-top: .5em">
+<%= form.submit "Login", class: "border-0 fs-4 extra-round button-style wide"%>
+</div>
+
+<% end %>
+
+</div> </div>
