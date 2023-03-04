@@ -301,4 +301,20 @@ body{
     width: 100%;
   }
   
- 
+  .center-form {
+    display: flex;
+    justify-content: center;
+    
+    height: 100vh;
+    background-color: aqua;
+  }
+  
+
+  .new-form {
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-color: black;
+    border-radius: 100px;
+  
+  }

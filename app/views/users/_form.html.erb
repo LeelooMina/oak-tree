@@ -1,3 +1,9 @@
+
+
+<div class="center-form">
+
+<div class="new-form">
+
 <%= form_with(model: user) do |form| %>
   <% if user.errors.any? %>
     <div style="color: red">
@@ -10,29 +16,33 @@
       </ul>
     </div>
   <% end %>
-
+ 
   <div>
-    <%= form.label :username, style: "display: block" %>
-    <%= form.text_field :username %>
+    <%= form.label :username, style: "display: block;" %>
+    <%= form.text_field :username,  style: "display: block; border-radius: 9999px" %>
   </div>
 
   <div>
-    <%= form.label :email, style: "display: block" %>
-    <%= form.text_field :email %>
+    <%= form.label :email, style: "display: block;" %>
+    <%= form.text_field :email, style: "display: block; border-radius: 9999px" %>
   </div>
 
   <div>
     <%= form.label :password, style: "display: block" %>
-    <%= form.text_field :password %>
+    <%= form.text_field :password, style: "display: block; border-radius: 9999px" %>
   </div>
 
 
   <div>
     <%= form.label :bio, style: "display: block" %>
-    <%= form.text_field :bio %>
+    <%= form.text_field :bio, style: "display: block; border-radius: 9999px" %>
   </div>
 
-  <div>
+  <div style="margin-top: .5em;">
     <%= form.submit %>
   </div>
+
+  </div>
 <% end %>
+
+</div>
