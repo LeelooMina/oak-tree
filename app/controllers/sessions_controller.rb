@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :already_signed_in?
+  before_action :already_signed_in?, except: [:destroy]
   def new
   end
 
@@ -18,6 +18,8 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    
+    session[:user_id] = nil
+    flash[:notice] = "You have sucessfully logged out."
+    redirect_to login_path
   end
 end
