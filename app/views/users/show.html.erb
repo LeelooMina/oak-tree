@@ -13,8 +13,8 @@
 
 
 
-<p> Followers:
- </p>
+<h5 class="mt-4"> Followers:
+ </h5>
  
          <% @user.followers.each do |follower|%>
          
@@ -23,12 +23,16 @@
   
   
   
-  <div>
-  <%= link_to "Edit this user", edit_user_path(@user) %> |
-  <%= link_to "Back to users", users_path %>
+  
+     <% if current_user != nil && @user.id == current_user.id %>
+  <div class="mt-4 mb-4">
+  <%= link_to "Edit Profile", edit_user_path(@user) %>
 
-  <%= button_to "Destroy this user", @user, method: :delete %>
+
+  <%# <%= button_to "Delete account", @user, method: :delete %>
 </div>
+
+<% end %>
 
 <% Acorn.where(user_id: @user.id).each do |acorn| %>
 
