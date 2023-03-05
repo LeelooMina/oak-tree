@@ -14,7 +14,8 @@ nature
 
     <%= link_to root_path	do %><li class="list-group-item border-0 fs-4"><i class="fa-solid fa-house p-3 "></i>Home</li></a>
     <% end %>
-    <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-hashtag p-3"></i>Explore</li> </a>
+    <%= link_to explore_path do %><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-solid fa-hashtag p-3"></i>Explore</li> </a>
+    <% end %>
 
     <% if logged_in? %>
     <a href="#"><li class="list-group-item border-0 fs-4 rounded-lg"><i class="fa-regular fa-bell p-3"></i>Notifications</li></a>
@@ -28,11 +29,10 @@ nature
     <%= link_to new_acorn_path do %>
     <li><button type="button" class="border-0 fs-4 extra-round button-style wide">Acorn</button></li>
     <% end %>
-     <%= link_to login_path do %>
+     <%= link_to logout_path, data: {"turbo-method": :delete} do %>
    <li><center><p class="fs-6 mt-3" >Log out</p></center></li>
    <% end %>
     <% end %>
-
 
 
     <% if logged_in? %>
@@ -46,9 +46,12 @@ nature
             <b>
               @<%= link_to current_user.username, user_path(current_user) %>
             </b>
+            </div>
             <% end %>
+
             </div>
             </div>
             <% end %>
+
   </ul>
 
