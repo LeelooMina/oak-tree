@@ -6,16 +6,18 @@
 
 
 
-      <form action="/follows" method="post">
-        <input type="hidden" name="follow[follower_id]" value="<%= 1 %>" %>
-        <input type="hidden" name="follow[followed_id]" value="<%= @user.id %> "> 
-        <input type="submit" value="Follow">
-        </form>
+        <%= button_to "Follow", follows_path, method: :post, params: { follow: {follower_id: current_user.id, followed_id: @user.id }} %>
+
+
+
+
+
 
 <p> Followers:
  </p>
  
          <% @user.followers.each do |follower|%>
+         
           <p>@<%= follower.username %></p>
         <% end %>
   
