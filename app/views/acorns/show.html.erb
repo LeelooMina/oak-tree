@@ -2,11 +2,14 @@
 
 <%= render @acorn %>
 
+<% if current_user != nil && current_user == "#{@acorn.user_id}" %>
 <div>
   <%= link_to "Edit this acorn", edit_acorn_path(@acorn) %> |
   <%= link_to "Back to acorns", acorns_path %>
 
   <%= button_to "Destroy this acorn", @acorn, method: :delete %>
 </div>
+
+<% end %>
 
 
