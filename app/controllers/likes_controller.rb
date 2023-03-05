@@ -54,10 +54,7 @@ class LikesController < ApplicationController
   def destroy
     @like.destroy
 
-    respond_to do |format|
-      format.html { redirect_to likes_url, notice: "Like was successfully destroyed." }
-      format.json { head :no_content }
-    end
+
   end
 
   private
