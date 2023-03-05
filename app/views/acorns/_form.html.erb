@@ -24,7 +24,7 @@
 
   <div>
     <%= form.label :reply, style: "display: block" %>
-    <%= form.check_box :reply %>
+    <%= hidden_field_tag :reply %>
   </div>
 
  <%= hidden_field_tag :user_id, current_user %>
