@@ -1,6 +1,6 @@
 <% @acorns.each do |acorn| %>
    
-      <%= render acorn %>
+      <%= render acorn,  locals: {query: params[:q]} %>
     
     <% end %>
 

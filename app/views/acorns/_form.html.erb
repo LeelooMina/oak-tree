@@ -17,29 +17,17 @@
   </div>
 
   <div>
-    <%= form.label :date_created, style: "display: block" %>
-    <%= form.date_field :date_created %>
+   <%= hidden_field_tag :date_created, Date.today %>
   </div>
 
-  <div>
-    <%= form.label :img, style: "display: block" %>
-    <%= form.text_field :img %>
-  </div>
 
-  <div>
-    <%= form.label :link, style: "display: block" %>
-    <%= form.text_field :link %>
-  </div>
 
   <div>
     <%= form.label :reply, style: "display: block" %>
     <%= form.check_box :reply %>
   </div>
 
-  <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
-  </div>
+ <%= hidden_field_tag :user_id, current_user %>
 
   <div>
     <%= form.submit %>
