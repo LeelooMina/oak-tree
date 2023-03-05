@@ -1,13 +1,29 @@
 class AcornsController < ApplicationController
   before_action :set_acorn, only: %i[ show edit update destroy ]
 
+
   # GET /acorns or /acorns.json
   def index
+    @query = params[:q]
+    if @query == "New"
+      @acorns = Acorn.order(created_at: :desc)
+      paginate
+    elsif @query
+      @acorns = Acorn.where("content LIKE ?", "%#{params[:q]}%")
+      paginate
+    else
+      @acorns = Acorn.all
+      paginate
+     
+    end
+  end
+
+  def paginate
     @per_page = 10
     @page = (params[:page] || 1).to_i
-    @total_count = Acorn.count
+    @total_count = @acorns.count
     @total_pages = (@total_count / @per_page.to_f).ceil
-    @acorns = Acorn.offset((@page - 1) * @per_page).limit(@per_page)
+    @acorns = @acorns.offset((@page - 1) * @per_page).limit(@per_page)
   end
 
   # GET /acorns/1 or /acorns/1.json
