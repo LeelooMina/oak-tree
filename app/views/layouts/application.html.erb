@@ -28,16 +28,17 @@
   <div class="wrapper">
   <div class="main-content">
 <div class="left-col border border-0">
-  <%= render partial: "shared/left_nav" %>
+  <%= render partial: "pages/left_nav" %>
 </div>
   <div class="middle-col">
-  <%= render partial: "shared/top_new" %>
+  <%= render partial: "pages/top_new" %>
    <%= yield %>
 </div>
+<% if current_user != nil %>
 <div class="right-col border border-1">
-  <%= render partial: "shared/right_nav" %>
+  <%= render partial: "pages/right_nav" %>
 </div>
-
+<% end %>
   </div>
   </div>
    

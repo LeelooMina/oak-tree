@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   post '/login', to: "sessions#create"
   post '/likes', to: "likes#new"
   delete '/logout', to: 'sessions#destroy'
+  post '/acorns/new', to: 'acorns#create'
+  delete '/likes', to: 'likes#destroy'
+  get '/explore', to: 'pages#explore'
 end
