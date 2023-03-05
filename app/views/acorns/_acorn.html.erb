@@ -1,20 +1,24 @@
+
 <div class="acorn-wrapper ">
       <div class="acorn-header">
-    <%= link_to acorn do%>
-          <%= image_tag url_for(acorn.user.profile_img), class: "profile-img" ,
-            alt: "#{acorn.user.username}'s profile photo " %>
+  
+          <%= image_tag url_for(acorn.user.profile_img), class: "profile-img",
+                                                         alt: "#{acorn.user.username}'s profile photo " %>
         
         <div class="acorn-user-info">
             <b>
               @<%= link_to acorn.user.username, user_path(acorn.user) %>
             </b>
+            <%= link_to acorn do%>
+
           <%= acorn.created_at.strftime("%m-%d-%Y") %>
     <p><%= acorn.content %></p>
         </div>
       </div>
+      <% end %>
    
 
-      <%# if acorn has an image do this  %>
+      <% # if acorn has an image do this %>
 
        <div class="acorn-footer">
     
@@ -30,30 +34,25 @@
     </div>
     
     <div class="likes">
-      <% if Like.find_by(user_id: 1, acorn_id: acorn.id)%>
+      <% if Like.find_by(user_id: current_user.id, acorn_id: acorn.id) %>
        
 
+<%= button_to Like.find_by(user_id: current_user.id, acorn_id: acorn.id), method: :delete, style: "border: 0px; padding-right: 0px; background-color: white;" do %>
+<svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
 
+<% end %>
 
-       
-
-         <form action="/likes" method="destroy">
-        <input type="hidden" name="like[user_id]" value="<%= 1 %>" %>
-        <input type="hidden" name="like[acorn_id]" value="<%= acorn.id %> "> 
-        
-          <button style="border: 0px; padding-right: 0px; background-color: white;"><svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> </button>
-        </form>
 
         
       <% end %>
 
-      <% if !Like.find_by(user_id: 1, acorn_id: acorn.id)%>
+      <% if !Like.find_by(user_id: current_user.id, acorn_id: acorn.id) %>
      
     
 
 
       <form action="/likes" method="post">
-        <input type="hidden" name="like[user_id]" value="<%= 1 %>" %>
+        <input type="hidden" name="like[user_id]" value="<%= current_user.id %>">
         <input type="hidden" name="like[acorn_id]" value="<%= acorn.id %> "> 
        
         <button style="border: 0px; padding-right: 0px; background-color: white;"> <svg class="feather feather-heart sc-dnqmqq jxshSx" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
@@ -64,12 +63,23 @@
    
 
       <% end %>
+
+      <% if current_user != nil && acorn.user_id == current_user %>
+      
+<div>
+  <%= link_to "Edit this acorn", edit_acorn_path(@acorn) %> |
+  <%= link_to "Back to acorns", acorns_path %>
+
+  <%= button_to "Destroy this acorn", @acorn, method: :delete %>
+</div>
+<% end %>
       <div class="likes-count">
         <%= acorn.likes.count %>
       </div>
     </div>
- <% end %>   
+
 
   </div>
 
     </div>
+
