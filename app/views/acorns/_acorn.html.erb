@@ -64,18 +64,23 @@
 
       <% end %>
 
-      <% if current_user != nil && acorn.user_id == current_user %>
+      <% if current_user != nil && acorn.user_id == current_user.id %>
       
 <div>
-  <%= link_to "Edit this acorn", edit_acorn_path(@acorn) %> |
-  <%= link_to "Back to acorns", acorns_path %>
-
-  <%= button_to "Destroy this acorn", @acorn, method: :delete %>
-</div>
-<% end %>
       <div class="likes-count">
         <%= acorn.likes.count %>
       </div>
+
+  <%# <%= link_to edit_acorn_path(@acorn) do %>
+  <%# <i class="fa-solid fa-pen-to-square p-1"></i> %>
+  <%# <% end %> %>
+
+<%# 
+  <%= link_to @acorn, method: :delete do %>
+<%# <i class="fa-solid fa-trash p-1"></i> %>
+  <%# <% end %>
+</div>
+<% end %>
     </div>
 
 

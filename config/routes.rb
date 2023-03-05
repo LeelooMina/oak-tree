@@ -18,4 +18,5 @@ Rails.application.routes.draw do
   post '/acorns/new', to: 'acorns#create'
   delete '/likes', to: 'likes#destroy'
   get '/explore', to: 'pages#explore'
+  
 end
