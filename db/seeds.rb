@@ -33,38 +33,38 @@ end
     )
   end
 
-15.times do
-    Acorn.create(
-      content:Faker::Movies::Hackers.quote,
-      date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
-      img: Faker::Placeholdit.image(size: "300x300"),
-      link: Faker::Internet.url,
-      reply: false,
-      user: User.all.sample
-    )
-  end
+# 15.times do
+#     Acorn.create(
+#       content:Faker::Movies::Hackers.quote,
+#       date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
+#       img: Faker::Placeholdit.image(size: "300x300"),
+#       link: Faker::Internet.url,
+#       reply: false,
+#       user: User.all.sample
+#     )
+#   end
 
-  15.times do
-    Acorn.create(
-      content:Faker::TvShows::DrWho.quote,
-      date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
-      img: Faker::Placeholdit.image(size: "300x300"),
-      link: Faker::Internet.url,
-      reply: false,
-      user: User.all.sample
-    )
-  end
+#   15.times do
+#     Acorn.create(
+#       content:Faker::TvShows::DrWho.quote,
+#       date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
+#       img: Faker::Placeholdit.image(size: "300x300"),
+#       link: Faker::Internet.url,
+#       reply: false,
+#       user: User.all.sample
+#     )
+#   end
 
-  15.times do
-    Acorn.create(
-      content:Faker::Movies::PrincessBride.quote,
-      date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
-      img: Faker::Placeholdit.image(size: "300x300"),
-      link: Faker::Internet.url,
-      reply: false,
-      user: User.all.sample
-    )
-  end
+#   15.times do
+#     Acorn.create(
+#       content:Faker::Movies::PrincessBride.quote,
+#       date_created: Faker::Date.between(from: 1.year.ago, to: Date.today),
+#       img: Faker::Placeholdit.image(size: "300x300"),
+#       link: Faker::Internet.url,
+#       reply: false,
+#       user: User.all.sample
+#     )
+#   end
 
   15.times do
     Acorn.create(

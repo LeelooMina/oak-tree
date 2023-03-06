@@ -60,9 +60,8 @@ class AcornsController < ApplicationController
   def update
     respond_to do |format|
       if @acorn.update(acorn_params)
-        format.html { redirect_to acorn_url(@acorn), notice: "Acorn was successfully updated." }
+        format.html { redirect_to root_path, notice: "Acorn was successfully updated." }
         format.json { render :show, status: :ok, location: @acorn }
-        redirect_to root_path
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @acorn.errors, status: :unprocessable_entity }
