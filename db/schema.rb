@@ -11,14 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2023_03_02_173657) do
-  create_table "acorn_hashtags", force: :cascade do |t|
-    t.integer "acorn_id", null: false
-    t.integer "hastag_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["acorn_id"], name: "index_acorn_hashtags_on_acorn_id"
-    t.index ["hastag_id"], name: "index_acorn_hashtags_on_hastag_id"
-  end
 
   create_table "acorns", force: :cascade do |t|
     t.string "content"
@@ -38,12 +30,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_173657) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["follower_id", "followed_id"], name: "index_follows_on_follower_id_and_followed_id", unique: true
-  end
-
-  create_table "hashtags", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -76,8 +62,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_02_173657) do
     t.string "password_digest"
   end
 
-  add_foreign_key "acorn_hashtags", "acorns"
-  add_foreign_key "acorn_hashtags", "hastags"
   add_foreign_key "acorns", "users"
   add_foreign_key "likes", "acorns"
   add_foreign_key "likes", "users"
